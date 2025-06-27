@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-public class DynamicBookStorage extends BookAISystem
+public class DynamicBookStorage extends Library
 {
     private ArrayList<String> bookTitle = new ArrayList<>();
     private ArrayList<String> bookGenre = new ArrayList<>();
@@ -38,9 +38,15 @@ public class DynamicBookStorage extends BookAISystem
             }
         }
     }
-    public void searchTitle(String title) //method to search for book titles
+     public void searchTitle(String title) //method to search for book titles
     {
-
+        int index = bookTitle.indexOf(title);
+        if(index != -1) {
+            System.out.println("Book found: " + bookTitle.get(index) + "(" + bookGenre.get(index) + ")");
+        }
+        else{
+            System.out.println("Book not found.");
+        }
     }
     public void displayGenre(String genre) //method to display gnere user inputs
     {
