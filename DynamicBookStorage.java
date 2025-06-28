@@ -1,15 +1,14 @@
-
 import java.util.ArrayList;
-public class DynamicBookStorage extends Library
+public class DynamicBookStorage extends LibraryT2
 {
     private ArrayList<String> bookTitle = new ArrayList<>();
     private ArrayList<String> bookGenre = new ArrayList<>();
-    public void addTitleAndGenre(String title, String genre) //method for adding title and corresponding genre
+    public void addTitleAndGenre(String title, String genre)
     {
         bookTitle.add(title);
         bookGenre.add(genre);
     }
-    public void removeBook(String title) //method for rmoving title and corrsponding genre
+    public void removeBook(String title)
     {
         int index = bookTitle.indexOf(title);
         if(index != -1)
@@ -38,7 +37,7 @@ public class DynamicBookStorage extends Library
             }
         }
     }
-     public void searchTitle(String title) //method to search for book titles
+    public void searchTitle(String title) //method to search for book titles
     {
         int index = bookTitle.indexOf(title);
         if(index != -1) {
@@ -50,7 +49,7 @@ public class DynamicBookStorage extends Library
     }
     public void displayGenre(String genre) //method to display gnere user inputs
     {
-        System.out.println("Books in genre ~" +genre+"~:");
+        System.out.println("Books in genre ~" +genre+"~");
         boolean found=false;
         for(int i=0; i<bookGenre.size(); i++)
         {
