@@ -1,4 +1,3 @@
-
 /**
  * @author Trevor Sanderson, Mariam Barry, & Brayden Stewart
  * date 6/27/2025
@@ -38,7 +37,8 @@ public class LibraryT2
             System.out.println("5. Display by genre");
             System.out.println("6. Display Books(Dynamically)");
             System.out.println("7. Enter book title(Fixed): ");
-            System.out.println("6. Display Books(Fixed)");
+            System.out.println("8. Display Books(Fixed)");
+            System.out.println("9. Search Book(Fixed)");
             System.out.println("0. Exit");
             choice = kbd.nextInt();
 
@@ -88,6 +88,13 @@ public class LibraryT2
                     break;
                 case 8:
                     inventory.displayBooks();
+                    break;
+                case 9:
+                    kbd.nextLine();
+                    System.out.print("Enter book title(Fixed) for search: ");
+                    String searchBook = kbd.nextLine();
+                    int place = inventory.searchTitle(searchBook);
+                    System.out.print(searchBook + " found at position " + place + ".");
                     break;
                 case 0:
                     run = false;
