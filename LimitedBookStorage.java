@@ -26,7 +26,16 @@ public class LimitedBookStorage extends LibraryT2{
             }
         }
         
+        public int searchTitle(String title)
+        {
+            for (int i = 0; i < titles.length; i++) {
+                if (titles[i].equals(title)) {
+                    return (i+1);
+                }
+            }
+            return 1;
+        }
+        
         
 
 }
-            
