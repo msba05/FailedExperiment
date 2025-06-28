@@ -1,11 +1,23 @@
+import java.util.Scanner;
 
- public class LimitedBookStorage extends LibraryT2
+public class LimitedBookStorage extends LibraryT2
 {
-         private String[] titles = new String[]{"Lord of The flies","Harry Potter and the Sorcerer's Stone","The Hunger Games","Divergent","Maze Runner"};
+         private String[] titles = new String[5];
          private int titleCount = 0;
+         Scanner kbd = new Scanner(System.in);
+         String choice;
 
+         public void main(String[] args) {
+        
+         for(int i = 0; i < 5; i++){
+            System.out.println("Enter a book title: ");
+            choice = kbd.nextLine();
+            addTitle(choice);
+         }
+            displayTitles();
+         }   
 
-
+  
 
         public void addTitle(String title)
         {
