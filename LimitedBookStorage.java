@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LimitedBookStorage extends LibraryT2
+public class LimitedBookStorage 
 {
          private String[] titles = new String[5];
          private int titleCount = 0;
@@ -9,13 +9,13 @@ public class LimitedBookStorage extends LibraryT2
 
          public void main(String[] args) {
         
-         for(int i = 0; i < 5; i++){
-            System.out.println("Enter a book title: ");
-            choice = kbd.nextLine();
-            addTitle(choice);
-         }
-            displayTitles();
-         }   
+                  for(int i = 0; i < 5; i++){
+                     System.out.println("Enter a book title: ");
+                     choice = kbd.nextLine();
+                     addTitle(choice);
+                  }
+                     displayTitles();
+          }   
 
   
 
