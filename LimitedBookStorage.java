@@ -1,53 +1,32 @@
 import java.util.Scanner;
 
-public class LimitedBookStorage 
-{
-         private String[] titles = new String[5];
-         private int titleCount = 0;
-         Scanner kbd = new Scanner(System.in);
-         String choice;
+public class LimitedBookStorage extends LibraryT2{
+    private String[] titles = new String[5];
+    private int count = 0;
+    Scanner kbd = new Scanner(System.in);
+         
 
-         public void main(String[] args) {
+        public void addBook(String title) {
+            if(count < titles.length){
+                titles[count] = title;
+                count++;
+                System.out.println("Book added: " + title);
+            } else {
+            System.out.println("Inventory is full, Cannot add more books");
+            }
+        }
         
-                  for(int i = 0; i < 5; i++){
-                     System.out.println("Enter a book title: ");
-                     choice = kbd.nextLine();
-                     addTitle(choice);
-                  }
-                     displayTitles();
-          }   
-
-  
-
-        public void addTitle(String title)
-        {
-
-            if (titleCount < titles.length) {
-                titles[titleCount] = title;
-                titleCount++;
-            }
-            else
-            {
-                System.out.println("Book collection is full. Cannot add more books.");
-            }
-        }
-
-        public void displayTitles()
-        {
-            System.out.println("Book Titles:");
-            for (int i = 0; i < titleCount; i++) {
-                System.out.println((i + 1) + ". " + titles[i]);
-            }
-        }
-
-        public int searchTitle(String title)
-        {
-            for (int i = 0; i < titleCount; i++) {
-                if (titles[i].equalsIgnoreCase(title)) {
-                    return i;
+        public void displayBooks(){
+            System.out.println("\nBook Inventory: ");
+                for(int i = 0; i < count; i++){
+                    System.out.println((i+1)+". " + titles[i]);
                 }
+                if (count == 0) {
+                System.out.println("No books in stock.");
             }
-            return 0;
         }
-}
+        
+        
 
+}
+            

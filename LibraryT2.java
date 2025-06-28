@@ -18,6 +18,7 @@ public class LibraryT2
     public static void main(String[] args)
     {
         DynamicBookStorage dynamicInventory = new DynamicBookStorage();
+        LimitedBookStorage inventory = new LimitedBookStorage();
         Scanner kbd = new Scanner(System.in);
         boolean run = true;
         int choice;
@@ -30,19 +31,21 @@ public class LibraryT2
             System.out.println("----------------------------------------------------------------------");
             System.out.println("[Press Enter to continue]");
             kbd.nextLine();
-            System.out.println("1. Add book titles.");
+            System.out.println("1. Add book titles(Dynamically.");
             System.out.println("2. Search by title.");
             System.out.println("3. Search by genre.");
             System.out.println("4. Remove Book");
             System.out.println("5. Display by genre");
-            System.out.println("6. Display Books");
+            System.out.println("6. Display Books(Dynamically)");
+            System.out.println("7. Enter book title(Fixed): ");
+            System.out.println("6. Display Books(Fixed)");
             System.out.println("0. Exit");
             choice = kbd.nextInt();
 
             switch (choice) {
                 case 1:
                     kbd.nextLine();
-                    System.out.println("Add book title: ");
+                    System.out.println("Add book title(Dynamically): ");
                     String title = kbd.nextLine();
                     System.out.println("Add genre for this book: ");
                     String genre = kbd.nextLine();
@@ -77,8 +80,19 @@ public class LibraryT2
                 case 6:
                     dynamicInventory.displayBooks();
                     break;
+                case 7:
+                    kbd.nextLine();
+                    System.out.print("Enter book title(Fixed): ");
+                    String book = kbd.nextLine();
+                    inventory.addBook(book);
+                    break;
+                case 8:
+                    inventory.displayBooks();
+                    break;
                 case 0:
+                    run = false;
                     System.out.println("Exiting System. Goodbye.");
+                    break;
 
                 default:
                     System.out.println("Invalid Option. Try Again.");
